@@ -37,7 +37,8 @@ RUN npm install -g npm@latest bun@latest  # si usa bun
 
 # Install reflex helper utilities like bun/node
 COPY rxconfig.py ./
-RUN reflex init
+# Skip init si rxconfig existe
+RUN reflex init || true
 
 # Copy local context to `/app` inside container (see .dockerignore)
 COPY . .
