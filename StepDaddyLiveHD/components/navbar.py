@@ -4,7 +4,6 @@ import reflex as rx
 from pygments.styles.dracula import background
 
 from rxconfig import config
-from StepDaddyLiveHD.StepDaddyLiveHD import State
 
 def navbar_icons_item(text: str, icon: str, url: str, external: bool = False) -> rx.Component:
     return rx.link(
@@ -48,8 +47,8 @@ def navbar(search=None) -> rx.Component:
                         on_click=rx.redirect("/")
                     ),
                     rx.cond(
-                        State.search_query,  # o State.search if exists,
-                       # search,
+                        False,  # Siempre muestra "Watch live TV" por ahora                       
+                        # search,
                         rx.text(
                             "Watch ",
                             rx.code("live"),
