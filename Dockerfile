@@ -20,6 +20,13 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+# Fix para Reflex init en Docker/Render
+RUN pip install --upgrade pip setuptools wheel
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g npm@latest
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+
 # Install reflex helper utilities like bun/node
 COPY rxconfig.py ./
 RUN reflex init
