@@ -14,6 +14,6 @@ config = rx.Config(
     show_built_with_reflex=False,
     plugins=[
 # rx.Plugin("sitemap"),  # Desactivado para build Docker
-        rx.plugins.TailwindV4Plugin(),
+       # rx.plugins.TailwindV4Plugin(),
     ],
 )
