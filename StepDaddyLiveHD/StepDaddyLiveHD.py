@@ -7,6 +7,7 @@ from StepDaddyLiveHD.step_daddy import Channel
 
 
 class State(rx.State):
+    channels: list = []  # Inicializa vacío
     channels: List[Channel] = []
     search_query: str = ""
 
