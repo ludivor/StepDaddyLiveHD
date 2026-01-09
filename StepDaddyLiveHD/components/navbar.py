@@ -85,11 +85,11 @@ def navbar(search=None) -> rx.Component:
                             on_click=rx.redirect("/")
                         ),
                         rx.tablet_only(
-                            rx.cond(
-                                search,
-                                search,
-                                rx.fragment(),
+                            rx.search_input(  # Sin cond
+                                placeholder="Buscar canales...",
+                                on_change=State.set_search_query,
                             ),
+
                         ),
                         rx.menu.root(
                             rx.menu.trigger(
