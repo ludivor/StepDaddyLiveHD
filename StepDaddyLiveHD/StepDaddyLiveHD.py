@@ -19,7 +19,7 @@ class State(rx.State):
     async def on_load(self):
         self.channels = backend.get_channels()
 
-    @rx.event
+    #@rx.event
     def set_search_query(self, value: str):
         self.search_query = value
 
