@@ -31,7 +31,7 @@ ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir "pydantic<3,>=2.0" "pydantic-core<3" sqlmodel==0.0.20
 RUN pip install --no-cache-dir "reflex<0.6"  # estable sin sqlmodel bug
-RUN pip install --no-cache-dir reflex==0.5.1  # versión estable sin bug
+RUN pip install --no-cache-dir "reflex>=0.5.9,<0.6"
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 RUN npm install -g npm@latest bun@latest  # si usa bun
 
