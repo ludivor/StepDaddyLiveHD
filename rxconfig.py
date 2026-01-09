@@ -13,7 +13,7 @@ config = rx.Config(
     socks5=socks5,
     show_built_with_reflex=False,
     plugins=[
-        rx.plugins.SitemapPlugin(),
+        rx.Plugin("sitemap"),  # Sintaxis nueva
         rx.plugins.TailwindV4Plugin(),
     ],
 )
