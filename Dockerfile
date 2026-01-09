@@ -15,7 +15,7 @@ RUN python -m venv /app/.venv
 ENV PATH="/app/.venv/bin:$PATH"
 
 WORKDIR /app
-
+RUN apt-get update -qq && apt-get install -y curl gcc g++
 # Install python app requirements and reflex in the container
 COPY requirements.txt .
 RUN pip install -r requirements.txt
