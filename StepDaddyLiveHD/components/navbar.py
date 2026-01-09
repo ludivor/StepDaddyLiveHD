@@ -85,7 +85,7 @@ def navbar(search=None) -> rx.Component:
                             on_click=rx.redirect("/")
                         ),
                         rx.tablet_only(
-                            rx.search_input(  # Sin cond
+                            rx.text_area(  # Sin cond
                                 placeholder="Buscar canales...",
                                 on_change=State.set_search_query,
                             ),
