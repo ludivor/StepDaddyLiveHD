@@ -26,6 +26,11 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g npm@latest
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+# Fix deps Reflex/Pydantic para Render/Python 3.13
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel pydantic==2.5.0 pydantic-core==2.14.5 sqlmodel==0.0.20
+RUN pip install --no-cache-dir reflex==0.5.1  # versión estable sin bug
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+RUN npm install -g npm@latest bun@latest  # si usa bun
 
 # Install reflex helper utilities like bun/node
 COPY rxconfig.py ./
