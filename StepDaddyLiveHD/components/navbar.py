@@ -48,8 +48,8 @@ def navbar(search=None) -> rx.Component:
                         on_click=rx.redirect("/")
                     ),
                     rx.cond(
-                        search,
-                        search,
+                        State.search_query,  # o State.search if exists,
+                       # search,
                         rx.text(
                             "Watch ",
                             rx.code("live"),
