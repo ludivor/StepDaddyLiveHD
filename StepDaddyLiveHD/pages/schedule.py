@@ -73,11 +73,11 @@ class ScheduleState(rx.State):
         self.categories = dict(sorted(categories.items()))
         self.events.sort(key=lambda event: event["dt"])
 
-    @rx.event
+    @rx.event()
     def set_switch(self, value: bool):
         self.switch = value
 
-    @rx.event
+    @rx.event()
     def set_search_query(self, value: str):
         self.search_query = value
 
