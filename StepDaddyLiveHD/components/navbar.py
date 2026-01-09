@@ -109,10 +109,11 @@ def navbar(search=None) -> rx.Component:
                     rx.cond(
                         search,
                         rx.mobile_only(
-                            rx.box(
-                                search,
+                            rx.input(
+                                placeholder="Buscar canales...",
                                 width="100%",
                             ),
+
                             width="100%",
                         ),
                         rx.fragment(),
