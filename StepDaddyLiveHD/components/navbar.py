@@ -59,7 +59,7 @@ def navbar(search=None) -> rx.Component:
                         ),
                     ),
                     rx.hstack(
-                        navbar_icons_item("Schedule", "calendar-sync", "/schedule"),
+                        navbar_icons_item("Schedule", "calendar", "/schedule"),
                         navbar_icons_item("playlist.m3u8", "file-down", "/playlist"),
                         navbar_icons_item("Github", "github", "https://github.com/gookie-dev/StepDaddyLiveHD", True),
                         spacing="6",
